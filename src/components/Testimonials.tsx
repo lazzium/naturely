@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Play, Pause } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -7,34 +7,85 @@ interface TestimonialCardProps {
     role: string;
     image: string;
     waves: number[];
+    audioSrc?: string;
     key?: string | number;
 }
 
-function TestimonialCard({ name, role, image, waves }: TestimonialCardProps) {
+function TestimonialCard({ name, role, image, waves, audioSrc }: TestimonialCardProps) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
+    // Contrôle via l'élément audio s'il est présent
     useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        const handleTimeUpdate = () => {
+            if (audio.duration) {
+                setProgress(audio.currentTime / audio.duration);
+            }
+        };
+
+        const handleEnded = () => {
+            setIsPlaying(false);
+            setProgress(0);
+        };
+
+        const handlePause = () => {
+            setIsPlaying(false);
+        };
+
+        const handlePlay = () => {
+            setIsPlaying(true);
+        };
+
+        audio.addEventListener('timeupdate', handleTimeUpdate);
+        audio.addEventListener('ended', handleEnded);
+        audio.addEventListener('pause', handlePause);
+        audio.addEventListener('play', handlePlay);
+
+        return () => {
+            audio.removeEventListener('timeupdate', handleTimeUpdate);
+            audio.removeEventListener('ended', handleEnded);
+            audio.removeEventListener('pause', handlePause);
+            audio.removeEventListener('play', handlePlay);
+        };
+    }, []);
+
+    // Fallback fictif si aucun fichier audio n'est fourni
+    useEffect(() => {
+        if (audioSrc) return;
+
         let interval: ReturnType<typeof setInterval>;
         if (isPlaying) {
             interval = setInterval(() => {
                 setProgress((prev) => {
-                    if (prev >= waves.length) {
+                    const nextProgress = prev + (1 / waves.length);
+                    if (nextProgress >= 1) {
                         setIsPlaying(false);
                         return 0;
                     }
-                    return prev + 1;
+                    return nextProgress;
                 });
-            }, 500); // 500ms per wave section
+            }, 500); // 500ms par section d'onde
         }
         return () => clearInterval(interval);
-    }, [isPlaying, waves.length]);
+    }, [isPlaying, waves.length, audioSrc]);
 
     const togglePlay = () => {
-        if (!isPlaying && progress >= waves.length) {
-            setProgress(0);
+        if (audioSrc && audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.play();
+            }
+        } else {
+            if (!isPlaying && progress >= 0.99) {
+                setProgress(0);
+            }
+            setIsPlaying(!isPlaying);
         }
-        setIsPlaying(!isPlaying);
     };
 
     return (
@@ -42,8 +93,7 @@ function TestimonialCard({ name, role, image, waves }: TestimonialCardProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -5 }}
-            className="bg-white rounded-[2.5rem] p-3 flex flex-col gap-4 transition-all duration-300 shadow-md hover:shadow-xl border border-gray-100/50"
+            className="bg-white rounded-[2.5rem] p-3 flex flex-col gap-4 transition-all duration-300 shadow-md border border-gray-100/50"
         >
             {/* Image */}
             <div className="relative w-full aspect-[4/4.5] rounded-[2rem] overflow-hidden">
@@ -66,7 +116,9 @@ function TestimonialCard({ name, role, image, waves }: TestimonialCardProps) {
                     {role}
                 </p>
 
-                {/* Audio Player */}
+                {/* Audio Player (hidden, logic only) */}
+                {audioSrc && <audio ref={audioRef} src={audioSrc} preload="metadata" />}
+
                 <div className="pb-3 pt-2 flex items-center gap-4">
                     <button
                         onClick={togglePlay}
@@ -77,14 +129,25 @@ function TestimonialCard({ name, role, image, waves }: TestimonialCardProps) {
                     </button>
 
                     {/* Generative Waveform */}
-                    <div className="flex-1 flex items-center gap-[3px] md:gap-1 h-8">
-                        {waves.map((height, i) => (
-                            <div
-                                key={i}
-                                style={{ height: `${height}%` }}
-                                className={`flex-1 rounded-full transition-colors duration-300 ${i < progress ? 'bg-brand-blue' : 'bg-gray-300'}`}
-                            />
-                        ))}
+                    <div className="flex-1 flex items-center gap-[3px] md:gap-1 h-8 cursor-pointer" onClick={(e) => {
+                        // Optionnel: permettre de cliquer sur l'onde pour changer la progression
+                        if (audioSrc && audioRef.current) {
+                            const bounds = e.currentTarget.getBoundingClientRect();
+                            const clickPos = e.clientX - bounds.left;
+                            const newProgress = clickPos / bounds.width;
+                            audioRef.current.currentTime = audioRef.current.duration * newProgress;
+                        }
+                    }}>
+                        {waves.map((height, i) => {
+                            const isActive = (i / waves.length) <= progress;
+                            return (
+                                <div
+                                    key={i}
+                                    style={{ height: `${height}%` }}
+                                    className={`flex-1 rounded-full transition-colors duration-300 ${isActive ? 'bg-brand-blue' : 'bg-gray-300'}`}
+                                />
+                            );
+                        })}
                     </div>
 
                 </div>
@@ -98,7 +161,8 @@ const testimonialsData = [
         name: "Sophie Bennett",
         role: "Etudiante en formation Développement web et mobile",
         image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
-        waves: [30, 50, 40, 70, 60, 90, 70, 50, 80, 100, 70, 40, 60, 50, 90, 60, 40, 30]
+        waves: [30, 50, 40, 70, 60, 90, 70, 50, 80, 100, 70, 40, 60, 50, 90, 60, 40, 30],
+        audioSrc: "/audio/temoignage%201.ogg"
     },
     {
         name: "Alex Martinez",
@@ -133,7 +197,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Grid of Testimonials */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-hidden py-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 py-4">
                     {testimonialsData.map((testimonial, index) => (
                         <TestimonialCard key={index} {...testimonial} />
                     ))}
