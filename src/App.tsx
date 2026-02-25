@@ -3,34 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Partners from './components/Partners';
-
-import Entities from './components/Entities';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
+import Home from './pages/Home';
+import ServicesPage from './pages/ServicesPage';
 
 export default function App() {
-  return (
-    <main className="min-h-screen w-full font-sans bg-white flex flex-col overflow-x-hidden">
-      <Navbar />
+  const path = window.location.pathname;
 
-      {/* Immersive Header Section */}
-      <Hero />
+  // Basic routing
+  if (path === '/services') {
+    return <ServicesPage />;
+  }
 
-      <div className="w-full bg-white">
-        <Partners />
-        <About />
-        <Entities />
-        <Services />
-        <Testimonials />
-      </div>
-
-      <Footer />
-    </main>
-  );
+  return <Home />;
 }
 

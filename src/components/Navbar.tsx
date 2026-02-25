@@ -4,13 +4,13 @@ import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('Accueil');
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: 'Accueil', href: '#' },
-    { name: 'Services', href: '#' },
+    { name: 'Accueil', href: '/' },
+    { name: 'Services', href: '/services' },
     { name: 'Collèges', href: '#' },
     { name: 'Lycée', href: '#' },
     { name: 'Centre', href: '#' },
@@ -18,16 +18,21 @@ export default function Navbar() {
     { name: 'Sessions', href: '#' },
   ];
 
+  const initialLink = navLinks.find(link => link.href === currentPath)?.name || 'Accueil';
+  const [activeLink, setActiveLink] = useState(initialLink);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] bg-white">
+    <header className="fixed top-0 left-0 right-0 z-[100] bg-white shadow-sm">
       <div className="w-full px-6 md:px-8 py-3 flex items-center justify-between min-h-[80px]">
         {/* Logo (Left side) */}
         <div className="flex-shrink-0 z-[110]">
-          <img
-            src={logo}
-            alt="FUN HIGH TECH Logo"
-            className="h-10 md:h-12 w-auto object-contain"
-          />
+          <a href="/">
+            <img
+              src={logo}
+              alt="FUN HIGH TECH Logo"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+          </a>
         </div>
 
         {/* Center Navigation (Desktop) */}

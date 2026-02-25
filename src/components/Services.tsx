@@ -87,7 +87,6 @@ export default function Services() {
 
                 <a
                     href="/services"
-                    onClick={(e) => e.preventDefault()}
                     className="btn-standard hidden md:flex bg-brand-blue text-white hover:bg-brand-blue/90"
                 >
                     Voir plus <ArrowUpRight className="w-5 h-5" />
@@ -135,7 +134,6 @@ export default function Services() {
             <div className="mt-8 flex justify-center md:hidden">
                 <a
                     href="/services"
-                    onClick={(e) => e.preventDefault()}
                     className="btn-standard group bg-brand-blue text-white hover:bg-brand-blue/90"
                 >
                     Voir plus <ArrowUpRight className="w-5 h-5" />
