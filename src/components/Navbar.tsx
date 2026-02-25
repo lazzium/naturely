@@ -38,8 +38,8 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setActiveLink(link.name)}
               className={`text-[13px] font-medium transition-all duration-300 px-4 py-2 rounded-full whitespace-nowrap ${activeLink === link.name
-                  ? 'border border-gray-200 shadow-sm text-gray-900 bg-white'
-                  : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                ? 'border border-gray-200 shadow-sm text-gray-900 bg-white'
+                : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               {link.name}
@@ -49,7 +49,7 @@ export default function Navbar() {
 
         {/* Right CTA (Desktop) */}
         <div className="hidden lg:flex flex-shrink-0 z-[110]">
-          <button className="bg-[#0f172a] text-white hover:bg-black rounded-full px-6 py-2.5 text-sm font-medium flex items-center gap-2 transition-colors">
+          <button className="bg-brand-blue text-white hover:bg-brand-blue/90 rounded-full px-6 py-2.5 text-sm font-medium flex items-center gap-2 transition-colors">
             Commencer
             <ArrowUpRight className="w-4 h-4" />
           </button>
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button (Right side on mobile) */}
         <div className="lg:hidden flex items-center gap-4 z-[110]">
-          <button className="bg-[#0f172a] text-white hover:bg-black rounded-full px-4 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
+          <button className="bg-brand-blue text-white hover:bg-brand-blue/90 rounded-full px-4 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
             Commencer
             <ArrowUpRight className="w-4 h-4 hidden sm:block" />
           </button>
@@ -86,8 +86,8 @@ export default function Navbar() {
                 setIsOpen(false);
               }}
               className={`py-3 px-4 rounded-xl transition-colors font-medium ${activeLink === link.name
-                  ? 'bg-gray-50 text-gray-900 border border-gray-100 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                ? 'bg-gray-50 text-gray-900 border border-gray-100 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               {link.name}

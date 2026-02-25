@@ -19,7 +19,8 @@ const partners = [
     {
         name: "Agreco",
         logo: "/images/partners/agreco.jpeg",
-        url: "https://www.agreco.be/"
+        url: "https://www.agreco.be/",
+        scaleClass: "scale-90 md:scale-95 group-hover:scale-100 md:group-hover:scale-105"
     }
 ];
 
@@ -44,13 +45,13 @@ export default function Partners() {
                             onClick={() => window.open(partner.url, '_blank')}
                             className="group cursor-pointer flex flex-col items-center"
                         >
-                            <div className="w-40 md:w-48 h-20 md:h-24 flex items-center justify-center p-4 md:p-6 border border-gray-100 transition-all duration-500 group-hover:border-brand-blue/30 group-hover:shadow-xl group-hover:shadow-brand-blue/5 bg-white relative overflow-hidden">
+                            <div className="w-40 md:w-48 h-20 md:h-24 flex items-center justify-center p-2 border border-gray-100 transition-all duration-500 group-hover:border-brand-blue/30 group-hover:shadow-xl group-hover:shadow-brand-blue/5 bg-white relative overflow-hidden rounded-2xl">
                                 <img
                                     src={partner.logo}
                                     alt={partner.name}
-                                    className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105"
+                                    className={`w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-500 transform ${partner.scaleClass || "scale-125 md:scale-[1.35] group-hover:scale-[1.35] md:group-hover:scale-[1.45]"}`}
                                 />
-                                <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand-blue/10 transition-all duration-500" />
+                                <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand-blue/10 transition-all duration-500 rounded-2xl" />
                             </div>
                         </motion.div>
                     ))}

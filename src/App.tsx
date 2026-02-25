@@ -7,8 +7,10 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Partners from './components/Partners';
-import Discover from './components/Discover';
+
+import Entities from './components/Entities';
 import Services from './components/Services';
+import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -17,18 +19,14 @@ export default function App() {
       <Navbar />
 
       {/* Immersive Header Section */}
-      <div className="w-full flex flex-col pt-20 md:pt-24 px-4 md:px-8 pb-4">
-        <div className="w-full rounded-none h-[85vh] md:h-[calc(100vh-140px)] min-h-[500px] md:min-h-[600px] flex flex-col relative overflow-hidden shadow-2xl ring-1 ring-black/5 bg-black">
-          <Hero />
-        </div>
-      </div>
+      <Hero />
 
-      {/* Legacy/Partners, About, and Services: Now blending with the white background */}
       <div className="w-full bg-white">
         <Partners />
         <About />
-        <Discover />
+        <Entities />
         <Services />
+        <Testimonials />
       </div>
 
       <Footer />

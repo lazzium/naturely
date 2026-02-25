@@ -11,10 +11,14 @@ export default function About() {
 
                 {/* Top Header */}
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-24">
-                    <div className="border border-gray-200 px-4 py-2 text-xs md:text-sm font-medium text-gray-800 shrink-0 capitalize">
-                        À propos de FUN HIGH TECH
+                    <div className="w-full flex items-center border-l-4 border-brand-orange pl-6">
+                        <div className="border border-gray-200 rounded-full px-4 py-2 text-xs md:text-sm font-medium text-gray-800 shrink-0 capitalize w-max">
+                            À propos de FUN HIGH TECH
+                        </div>
                     </div>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-800 font-medium leading-relaxed flex-1">
+                </div>
+                <div className="w-full">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-800 font-medium leading-relaxed max-w-4xl">
                         Chez FUN HIGH TECH, nous ne faisons pas que parler de technologie — <span className="text-gray-500">nous la créons.</span> Depuis notre fondation, notre structure est devenue un foyer pour les esprits innovants, des étudiants curieux aux experts chevronnés.
                     </p>
                 </div>
@@ -25,7 +29,7 @@ export default function About() {
                     {/* Dark Card */}
                     <motion.div
                         whileHover={{ y: -5 }}
-                        className="bg-[#0f172a] text-white p-8 md:p-10 flex flex-col justify-between min-h-[380px] md:min-h-[420px]"
+                        className="bg-[#0f172a] text-white p-8 md:p-10 flex flex-col justify-between min-h-[380px] md:min-h-[420px] rounded-3xl"
                     >
                         <div>
                             <Server className="w-8 h-8 md:w-10 md:h-10 mb-6 md:mb-8 text-white/90" />
@@ -39,12 +43,12 @@ export default function About() {
                                 className="flex items-center justify-center cursor-pointer transition-colors duration-300"
                             >
                                 {innovationMode ? (
-                                    <div className="w-12 md:w-14 h-6 md:h-7 bg-brand-blue relative flex items-center p-1">
-                                        <div className="w-4 md:w-5 h-4 md:h-5 bg-white absolute right-1"></div>
+                                    <div className="w-12 md:w-14 h-6 md:h-7 bg-brand-blue relative flex items-center p-1 rounded-full">
+                                        <div className="w-4 md:w-5 h-4 md:h-5 bg-white absolute right-1 rounded-full"></div>
                                     </div>
                                 ) : (
-                                    <div className="w-12 md:w-14 h-6 md:h-7 bg-gray-600 relative flex items-center p-1">
-                                        <div className="w-4 md:w-5 h-4 md:h-5 bg-white absolute left-1"></div>
+                                    <div className="w-12 md:w-14 h-6 md:h-7 bg-gray-600 relative flex items-center p-1 rounded-full">
+                                        <div className="w-4 md:w-5 h-4 md:h-5 bg-white absolute left-1 rounded-full"></div>
                                     </div>
                                 )}
                             </button>
@@ -55,7 +59,7 @@ export default function About() {
                     {/* Image Card */}
                     <motion.div
                         whileHover={{ y: -5 }}
-                        className="relative min-h-[300px] md:min-h-[420px] overflow-hidden group bg-brand-blue"
+                        className="relative min-h-[300px] md:min-h-[420px] overflow-hidden group bg-brand-blue rounded-3xl"
                     >
                         <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
                             <img
@@ -65,7 +69,7 @@ export default function About() {
                             />
                         </div>
                         <div className="absolute inset-0 flex items-center justify-center p-6">
-                            <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 md:px-8 py-3 text-sm font-medium tracking-wide text-center">
+                            <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 md:px-8 py-3 text-sm font-medium tracking-wide text-center rounded-full">
                                 Formations & Incubations
                             </div>
                         </div>
@@ -74,7 +78,7 @@ export default function About() {
                     {/* Light Card */}
                     <motion.div
                         whileHover={{ y: -5 }}
-                        className="bg-white border border-gray-100 p-8 md:p-10 flex flex-col min-h-[380px] md:min-h-[420px]"
+                        className="bg-white border border-gray-100 p-8 md:p-10 flex flex-col min-h-[380px] md:min-h-[420px] rounded-3xl"
                     >
                         <h3 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-2 tracking-tight">100+</h3>
                         <p className="text-sm font-medium text-gray-800 mb-4">Experts & Mentors</p>
@@ -94,7 +98,7 @@ export default function About() {
                                         {[...Array(10)].map((_, i) => (
                                             <div
                                                 key={i}
-                                                className={`h-2 md:h-2.5 w-full max-w-[12px] ${i < level.score ? 'bg-[#38bdf8]' : 'bg-gray-200'}`}
+                                                className={`h-2 md:h-2.5 w-full max-w-[12px] rounded-sm ${i < level.score ? 'bg-[#38bdf8]' : 'bg-gray-200'}`}
                                             />
                                         ))}
                                     </div>

@@ -80,7 +80,7 @@ export default function Services() {
     return (
         <section className="w-full bg-white py-12 md:py-16 px-6 sm:px-8 lg:px-20">
             <div className="mb-8 md:mb-12 w-full flex items-center justify-between border-l-4 border-brand-orange pl-6">
-                <div>
+                <div className="text-left w-full">
                     <h2 className="text-3xl md:text-5xl font-light text-gray-900 tracking-tight">Nos Services</h2>
                     <p className="text-gray-500 text-sm mt-2">Expertise technologique au service de votre croissance.</p>
                 </div>
@@ -98,7 +98,7 @@ export default function Services() {
                 {displayedServices.map((service, index) => (
                     <div
                         key={index}
-                        className={`relative group aspect-square rounded-none overflow-hidden p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] z-0 hover:z-10 ${service.cardBg}`}
+                        className={`relative group aspect-square rounded-3xl overflow-hidden p-6 md:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] z-0 hover:z-10 ${service.cardBg}`}
                     >
                         {/* Background Setup */}
                         {service.image ? (
@@ -123,7 +123,7 @@ export default function Services() {
                                 {service.description}
                             </p>
 
-                            <button className={`w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white border border-current rounded-none ${service.textColor}`}>
+                            <button className={`w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white border border-current rounded-full ${service.textColor}`}>
                                 <ArrowUpRight className="w-5 h-5" />
                             </button>
                         </div>
