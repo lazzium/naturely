@@ -3,14 +3,23 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-brand-blue: #1a4a8e;
+  --color-brand-blue: #1e4a8e;
+  /* Unified Blue */
   --color-brand-orange: #f39200;
   --color-brand-red: #c0272d;
 
 }
 
-.btn-standard {
-  @apply rounded-full px-6 py-3 text-base md:px-8 md:py-4 md:text-lg font-medium inline-flex items-center justify-center gap-3 transition-all cursor-pointer;
+@utility btn-standard {
+  @apply rounded-full px-6 py-3 text-base font-medium inline-flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95 md:px-8 md:py-3.5;
+}
+
+@utility btn-blue {
+  @apply btn-standard bg-brand-blue text-white hover:bg-brand-blue/90;
+}
+
+@utility btn-white-blue {
+  @apply btn-standard bg-white text-brand-blue hover:bg-gray-50 border border-gray-100;
 }
 
 body {

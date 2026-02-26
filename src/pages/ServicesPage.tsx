@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import MobileCTA from '../components/MobileCTA';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -67,29 +68,24 @@ export default function ServicesPage() {
         <main className="min-h-screen w-full font-sans bg-white flex flex-col overflow-x-hidden pt-[80px]">
             <Navbar />
 
-            {/* Hero Section with dark background mapping the screenshot's design */}
-            <section className="relative pt-16 pb-20 px-4 md:px-8 lg:px-20 bg-brand-blue overflow-hidden w-full">
-                {/* Background gradient from the screenshot (subtle green/light effect in the center) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange/20 blur-[120px] rounded-full pointer-events-none" />
+            {/* Hero Section */}
+            <section className="relative pt-16 pb-20 px-4 md:px-8 lg:px-20 bg-white overflow-hidden w-full">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/20 blur-[120px] rounded-full pointer-events-none" />
 
                 <div className="relative z-10 max-w-5xl mx-auto text-center mb-10">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
-                        <span className="text-white/80 text-sm font-medium">FUN HIGH TECH</span>
-                    </div>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 leading-[1.15] tracking-tight drop-shadow-lg">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 mb-6 leading-[1.15] tracking-tight">
                         Accomplir notre mission sur la <br className="hidden md:block" />
                         <span className="text-brand-orange">révolution numérique</span> en Afrique
                     </h1>
-                    <p className="text-white/90 text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+                    <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto font-light leading-relaxed">
                         Pour mieux accomplir notre mission, nous nous appuyons sur trois laboratoires d'ingénierie spécifiques de pointe.
                     </p>
-                    <button className="bg-brand-orange text-white hover:bg-brand-orange/90 rounded-full px-6 sm:px-8 py-3.5 text-sm font-medium transition-all inline-flex items-center gap-2 shadow-lg group">
-                        Faire une demande <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    <button className="bg-brand-blue text-white hover:bg-brand-blue/90 rounded-full px-6 sm:px-8 py-3.5 text-sm font-medium transition-all inline-flex items-center justify-center gap-2 shadow-lg group">
+                        Faire une demande <ArrowRight className="w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
                     </button>
                 </div>
 
-                {/* Laboratoires Cards mapping the overlapping images in the screenshot */}
+                {/* Laboratoires Cards */}
                 <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4">
                     {laboratoires.map((lab, index) => (
                         <div key={index} className="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-gray-900 border border-white/10 shadow-2xl">
@@ -100,7 +96,7 @@ export default function ServicesPage() {
                                 <h3 className="text-white text-xl md:text-2xl font-semibold mb-4 pr-4 leading-tight">
                                     {lab.title}
                                 </h3>
-                                <button className="bg-brand-orange text-white hover:bg-brand-orange/90 rounded-full px-5 py-2.5 text-sm font-semibold transition-all inline-flex items-center gap-2 shadow-lg">
+                                <button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-5 py-2.5 text-sm font-semibold transition-all inline-flex items-center gap-2 shadow-lg">
                                     Découvrir <ArrowRight className="w-4 h-4" />
                                 </button>
                             </div>
@@ -109,7 +105,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Services List Section matching the white sections in the screenshot */}
+            {/* Services List Section */}
             <section className="py-24 px-6 sm:px-8 lg:px-20 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center max-w-3xl mx-auto mb-16">
@@ -124,50 +120,81 @@ export default function ServicesPage() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {servicesList.map((service, index) => (
-                            <div key={index} className={`rounded-[32px] p-8 md:p-10 flex flex-col h-full border ${service.light ? 'bg-white border-gray-100' : 'bg-brand-blue border-transparent'} transition-all hover:-translate-y-1 hover:shadow-xl`}>
-                                <div className="mb-8">
-                                    <h3 className={`text-2xl font-semibold mb-4 tracking-tight leading-snug ${service.light ? 'text-gray-900' : 'text-white'}`}>
-                                        {service.title}
-                                    </h3>
-                                    <p className={`text-base leading-relaxed ${service.light ? 'text-gray-600' : 'text-white/70'}`}>
-                                        {service.description}
-                                    </p>
-                                </div>
+                    <div className="flex flex-col gap-8 w-full">
+                        <div className="flex flex-wrap justify-center gap-8 w-full">
+                            {servicesList.slice(0, 3).map((service, index) => (
+                                <div key={index} className={`rounded-[32px] p-8 md:p-10 flex flex-col h-full border ${service.light ? 'bg-white border-gray-100' : 'bg-brand-blue border-transparent'} transition-all hover:-translate-y-1 hover:shadow-xl w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] min-h-[400px]`}>
+                                    <div className="mb-8">
+                                        <h3 className={`text-2xl font-semibold mb-4 tracking-tight leading-snug ${service.light ? 'text-gray-900' : 'text-white'}`}>
+                                            {service.title}
+                                        </h3>
+                                        <p className={`text-base leading-relaxed ${service.light ? 'text-gray-600' : 'text-white/70'}`}>
+                                            {service.description}
+                                        </p>
+                                    </div>
 
-                                <div className="mt-auto pt-8">
-                                    <button className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-colors ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200' : 'bg-brand-orange text-white hover:bg-brand-orange/90'}`}>
-                                        Faire une demande <ArrowRight className="w-5 h-5" />
-                                    </button>
+                                    <div className="mt-auto pt-8">
+                                        <button className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-all ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200 shadow-none' : 'bg-white text-brand-blue hover:bg-gray-50 shadow-md'}`}>
+                                            Faire une demande <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        <div className="flex flex-wrap justify-center gap-8 w-full">
+                            {servicesList.slice(3, 7).map((service, index) => (
+                                <div key={index} className={`rounded-[32px] p-8 md:p-10 flex flex-col h-full border ${service.light ? 'bg-white border-gray-100' : 'bg-brand-blue border-transparent'} transition-all hover:-translate-y-1 hover:shadow-xl w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] min-h-[400px]`}>
+                                    <div className="mb-8">
+                                        <h3 className={`text-2xl font-semibold mb-4 tracking-tight leading-snug ${service.light ? 'text-gray-900' : 'text-white'}`}>
+                                            {service.title}
+                                        </h3>
+                                        <p className={`text-base leading-relaxed ${service.light ? 'text-gray-600' : 'text-white/70'}`}>
+                                            {service.description}
+                                        </p>
+                                    </div>
+
+                                    <div className="mt-auto pt-8">
+                                        <button className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-all ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200 shadow-none' : 'bg-white text-brand-blue hover:bg-gray-50 shadow-md'}`}>
+                                            Faire une demande <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Promo Section at the bottom mapping the last part of screenshot */}
-            <section className="py-0 px-0 bg-white">
-                <div className="w-full bg-brand-blue overflow-hidden flex flex-col md:flex-row min-h-[500px] md:min-h-[650px]">
-                    <div className="p-12 md:p-24 flex-1 flex flex-col justify-center items-start lg:pl-32">
+            {/* Promo Section */}
+            <section className="relative py-24 px-6 sm:px-8 lg:px-20 min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop"
+                        className="w-full h-full object-cover"
+                        alt="Contact Background"
+                    />
+                    <div className="absolute inset-0 bg-brand-blue/80 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-blue to-transparent opacity-90" />
+                </div>
+
+                <div className="relative z-10 max-w-7xl mx-auto w-full">
+                    <div className="max-w-3xl">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-8 leading-tight">
-                            Prêt à propulser votre entreprise <br className="hidden lg:block" /> vers l'avenir ?
+                            Prêt à propulser vers l'avenir votre entreprise ?
                         </h2>
                         <p className="text-white/80 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
                             Nous vous accompagnons dans toutes les étapes de votre transformation digitale pour garantir le succès de votre entreprise de demain.
                         </p>
-                        <button className="bg-brand-orange text-white hover:bg-brand-orange/90 rounded-full px-10 py-5 text-lg font-semibold transition-all inline-flex items-center gap-3">
-                            Contactez-nous aujourd'hui <ArrowRight className="w-6 h-6" />
+                        <button className="bg-white text-brand-blue hover:bg-gray-100 rounded-full px-10 py-5 text-lg font-semibold transition-all shadow-lg inline-flex items-center justify-center">
+                            Contactez-nous
                         </button>
-                    </div>
-                    <div className="w-full md:w-[45%] lg:w-[40%] h-[400px] md:h-auto">
-                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Contact" />
                     </div>
                 </div>
             </section>
 
             <Footer />
+            <MobileCTA />
         </main>
     );
 }

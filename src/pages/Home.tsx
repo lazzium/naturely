@@ -6,6 +6,7 @@ import Entities from '../components/Entities';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
+import MobileCTA from '../components/MobileCTA';
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
             </div>
 
             <Footer />
+            <MobileCTA />
         </main>
     );
 }

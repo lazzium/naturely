@@ -54,7 +54,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 leading-[1.15] tracking-tight drop-shadow-lg"
           >
-            Ne subissez plus l'évolution technologique. Créez-la
+            Ne subissez plus l'évolution technologique. Créez-la.
           </motion.h1>
 
           <motion.p
@@ -85,7 +85,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-row-reverse md:flex-row items-center gap-4 w-full md:w-auto justify-between md:justify-start"
+            className="hidden sm:flex flex-row-reverse md:flex-row items-center gap-4 w-full md:w-auto justify-between md:justify-start"
           >
             <div className="text-white text-right md:text-left text-[11px] sm:text-sm font-medium leading-snug drop-shadow-md">
               Formez-vous avec des experts.<br className="hidden sm:block" />

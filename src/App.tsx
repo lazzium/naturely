@@ -5,15 +5,15 @@
 
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
+import LyceePage from './pages/LyceePage';
 
 export default function App() {
   const path = window.location.pathname;
 
-  // Basic routing
-  if (path === '/services') {
-    return <ServicesPage />;
-  }
-
-  return <Home />;
+  return (
+    <>
+      {path === '/services' ? <ServicesPage /> : path === '/lycee' ? <LyceePage /> : <Home />}
+    </>
+  );
 }
 

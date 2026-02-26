@@ -1,10 +1,7 @@
 import { motion } from 'motion/react';
 import { Server } from 'lucide-react';
-import { useState } from 'react';
 
 export default function About() {
-    const [innovationMode, setInnovationMode] = useState(true);
-
     return (
         <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-20">
             <div className="max-w-7xl mx-auto flex flex-col gap-12 md:gap-16">
@@ -37,23 +34,6 @@ export default function About() {
                                 Des infrastructures réseau avec serveurs dédiés de niveau professionnel — <span className="text-gray-400">innovez dans des conditions parfaites, en toute saison.</span>
                             </p>
                         </div>
-                        <div className="flex items-center gap-4 mt-8 md:mt-12">
-                            <button
-                                onClick={() => setInnovationMode(!innovationMode)}
-                                className="flex items-center justify-center cursor-pointer transition-colors duration-300"
-                            >
-                                {innovationMode ? (
-                                    <div className="w-12 md:w-14 h-6 md:h-7 bg-brand-blue relative flex items-center p-1 rounded-full">
-                                        <div className="w-4 md:w-5 h-4 md:h-5 bg-white absolute right-1 rounded-full"></div>
-                                    </div>
-                                ) : (
-                                    <div className="w-12 md:w-14 h-6 md:h-7 bg-gray-600 relative flex items-center p-1 rounded-full">
-                                        <div className="w-4 md:w-5 h-4 md:h-5 bg-white absolute left-1 rounded-full"></div>
-                                    </div>
-                                )}
-                            </button>
-                            <span className="text-xs md:text-sm font-medium text-gray-400">Mode Innovation</span>
-                        </div>
                     </motion.div>
 
                     {/* Image Card */}
@@ -69,7 +49,7 @@ export default function About() {
                             />
                         </div>
                         <div className="absolute inset-0 flex items-center justify-center p-6">
-                            <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 md:px-8 py-3 text-sm font-medium tracking-wide text-center rounded-full">
+                            <div className="bg-transparent text-white px-6 md:px-8 py-3 text-sm font-medium tracking-wide text-center rounded-full uppercase border border-white/40">
                                 Formations & Incubations
                             </div>
                         </div>

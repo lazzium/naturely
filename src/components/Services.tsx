@@ -87,7 +87,7 @@ export default function Services() {
 
                 <a
                     href="/services"
-                    className="btn-standard hidden md:flex bg-brand-blue text-white hover:bg-brand-blue/90"
+                    className="btn-standard hidden md:flex bg-brand-blue text-white hover:bg-brand-blue/90 whitespace-nowrap"
                 >
                     Voir plus <ArrowUpRight className="w-5 h-5" />
                 </a>
@@ -130,13 +130,12 @@ export default function Services() {
                 ))}
             </div>
 
-            {/* Mobile View More Button */}
             <div className="mt-8 flex justify-center md:hidden">
                 <a
                     href="/services"
-                    className="btn-standard group bg-brand-blue text-white hover:bg-brand-blue/90"
+                    className="btn-standard group bg-brand-blue text-white hover:bg-brand-blue/90 whitespace-nowrap"
                 >
-                    Voir plus <ArrowUpRight className="w-5 h-5" />
+                    Voir + <ArrowUpRight className="w-5 h-5" />
                 </a>
             </div>
         </section>

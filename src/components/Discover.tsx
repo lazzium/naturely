@@ -13,12 +13,12 @@ const contentData = [
             <>
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Mission bg" className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay z-0" />
                 <div className="relative z-10 flex flex-col h-full justify-center text-white max-w-5xl mx-auto w-full">
-                    <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-semibold uppercase tracking-wider mb-8 w-max shadow-sm border border-white/20">Fondation</div>
+                    <div className="inline-block px-4 py-1.5 bg-transparent text-white rounded-full text-xs font-semibold uppercase tracking-wider mb-8 w-max shadow-sm border border-white/40">Fondation</div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-10 leading-tight">
                         Bâtir l'avenir <span className="font-semibold text-brand-orange">technologique</span> de l'Afrique.
                     </h2>
                     <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
-                        <div className="flex items-start gap-5 bg-white/5 backdrop-blur-sm p-6 lg:p-8 rounded-2xl border border-white/10 h-full">
+                        <div className="flex items-start gap-5 bg-transparent p-6 lg:p-8 rounded-2xl border border-white/40 h-full">
                             <div className="bg-brand-orange/20 p-3.5 rounded-2xl text-brand-orange shrink-0">
                                 <Zap className="w-6 h-6" />
                             </div>
@@ -29,8 +29,8 @@ const contentData = [
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-5 bg-white/5 backdrop-blur-sm p-6 lg:p-8 rounded-2xl border border-white/10 h-full">
-                            <div className="bg-white/20 p-3.5 rounded-2xl text-white shrink-0">
+                        <div className="flex items-start gap-5 bg-transparent p-6 lg:p-8 rounded-2xl border border-white/40 h-full">
+                            <div className="bg-white/10 p-3.5 rounded-2xl text-white shrink-0">
                                 <Target className="w-6 h-6" />
                             </div>
                             <div>
@@ -55,8 +55,8 @@ const contentData = [
             <>
                 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Vision bg" className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay z-0" />
                 <div className="relative z-10 flex flex-col h-full justify-center items-center w-full max-w-4xl mx-auto">
-                    <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-semibold uppercase tracking-wider mb-10 shadow-sm border border-white/20">Ambition</div>
-                    <div className="relative p-10 lg:p-14 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl overflow-hidden group w-full">
+                    <div className="inline-block px-4 py-1.5 bg-transparent text-white rounded-full text-xs font-semibold uppercase tracking-wider mb-10 shadow-sm border border-white/40">Ambition</div>
+                    <div className="relative p-10 lg:p-14 bg-transparent rounded-3xl border border-white/40 shadow-xl overflow-hidden group w-full">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent transition-opacity group-hover:opacity-50"></div>
                         <span className="absolute -top-6 -left-4 text-8xl text-white/10 font-serif leading-none">"</span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-relaxed italic relative z-10 text-center">
@@ -79,7 +79,7 @@ const contentData = [
             <>
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Formations bg" className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay z-0" />
                 <div className="relative z-10 flex flex-col h-full pr-2">
-                    <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-[10px] font-semibold uppercase tracking-wider mb-4 w-max shrink-0 border border-white/20">Programmes</div>
+                    <div className="inline-block px-4 py-1 bg-transparent text-white rounded-full text-[10px] font-semibold uppercase tracking-wider mb-4 w-max shrink-0 border border-white/40">Programmes</div>
                     <h2 className="text-2xl md:text-4xl font-light text-white mb-6 shrink-0 tracking-tight">
                         Des parcours conçus pour <span className="font-semibold text-brand-orange">innover.</span>
                     </h2>
@@ -87,7 +87,7 @@ const contentData = [
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full overflow-hidden">
                         {/* Column 1: School & Center */}
                         <div className="flex flex-col gap-5">
-                            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 relative overflow-hidden flex-1 flex flex-col hover:bg-white/10 transition-colors">
+                            <div className="bg-transparent border border-white/40 rounded-3xl p-6 relative overflow-hidden flex-1 flex flex-col hover:bg-white/10 transition-colors">
                                 <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-blue" />
                                 <h3 className="text-base font-bold text-white mb-4">FUN HIGH TECH SCHOOL</h3>
                                 <ul className="space-y-3">
@@ -97,7 +97,7 @@ const contentData = [
                                 </ul>
                             </div>
 
-                            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 relative overflow-hidden flex-1 flex flex-col hover:bg-white/10 transition-colors">
+                            <div className="bg-transparent border border-white/40 rounded-3xl p-6 relative overflow-hidden flex-1 flex flex-col hover:bg-white/10 transition-colors">
                                 <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-orange" />
                                 <h3 className="text-base font-bold text-white mb-4">FUN HIGH TECH CENTER</h3>
                                 <ul className="space-y-3">
@@ -110,18 +110,18 @@ const contentData = [
 
                         {/* Column 2: Pro & Others */}
                         <div className="flex flex-col gap-5">
-                            <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 flex-1 flex flex-col relative overflow-hidden">
+                            <div className="bg-transparent p-6 rounded-3xl border border-white/40 flex-1 flex flex-col relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-1.5 h-full bg-white/40" />
                                 <h4 className="font-bold text-white mb-4 text-base uppercase tracking-wide">Pro & Management</h4>
                                 <p className="text-xs text-white/80 leading-relaxed font-medium capitalize">Formation à destination de directeurs informatiques, chefs de projet, architectes techniques, analystes programmeurs</p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4 flex-1">
-                                <div className="bg-white/10 backdrop-blur-md p-5 rounded-3xl border border-white/20 flex flex-col justify-center">
+                                <div className="bg-transparent p-5 rounded-3xl border border-white/40 flex flex-col justify-center">
                                     <h4 className="font-bold text-white mb-2 text-sm uppercase text-brand-blue">PyPro</h4>
                                     <p className="text-[11px] text-white/60 leading-tight">Expertise Python & IA pour étudiants</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur-md p-5 rounded-3xl border border-white/20 flex flex-col justify-center">
+                                <div className="bg-transparent p-5 rounded-3xl border border-white/40 flex flex-col justify-center">
                                     <h4 className="font-bold text-white mb-2 text-sm uppercase text-brand-blue">Vacances</h4>
                                     <p className="text-[11px] text-white/60 leading-tight">Immersion tech intensive intensive</p>
                                 </div>
@@ -168,7 +168,7 @@ export default function Discover() {
                                     key={item.id}
                                     layout
                                     onClick={() => setActiveTab(item.id)}
-                                    className={`cursor-pointer overflow-hidden transition-all duration-300 backdrop-blur-md border ${isActive ? 'bg-white text-brand-blue rounded-3xl p-6 shadow-2xl border-white scale-[1.02]' : 'bg-white/10 hover:bg-white/20 border-white/20 text-white rounded-2xl p-4 sm:p-5'}`}
+                                    className={`cursor-pointer overflow-hidden transition-all duration-300 border ${isActive ? 'bg-white text-brand-blue rounded-3xl p-6 shadow-2xl border-white scale-[1.02]' : 'bg-transparent hover:bg-white/10 border-white/40 text-white rounded-2xl p-4 sm:p-5'}`}
                                 >
                                     {isActive ? (
                                         <div className="flex flex-col h-full gap-2">
@@ -188,7 +188,7 @@ export default function Discover() {
                                     ) : (
                                         <div className="flex flex-col h-full justify-between gap-4">
                                             <h3 className="text-xl md:text-2xl font-medium ml-2 drop-shadow-sm">{item.title}</h3>
-                                            <button className="btn-standard self-start bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm mt-auto">
+                                            <button className="btn-standard self-start bg-transparent text-white border border-white/40 hover:bg-white/10 mt-auto">
                                                 Voir détails
                                             </button>
                                         </div>
@@ -200,7 +200,7 @@ export default function Discover() {
 
                     {/* Bottom: Content Details Full Width */}
                     <div className="w-full">
-                        <div className="bg-white/10 backdrop-blur-xl rounded-[32px] md:rounded-[40px] p-6 sm:p-10 md:p-12 h-[600px] lg:h-[700px] xl:h-[720px] border border-white/20 flex flex-col relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] ring-1 ring-white/10 transition-all duration-500">
+                        <div className="bg-transparent rounded-[32px] md:rounded-[40px] p-6 sm:p-10 md:p-12 h-[600px] lg:h-[700px] xl:h-[720px] border border-white/20 flex flex-col relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] ring-1 ring-white/5 transition-all duration-500">
                             <AnimatePresence mode="wait">
                                 {contentData.map((item) => (
                                     item.id === activeTab && (

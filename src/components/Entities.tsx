@@ -69,7 +69,7 @@ export default function Entities() {
 
                             {/* Left Text Content */}
                             <div className="max-w-3xl">
-                                <div className="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-5 py-2 rounded-lg text-xs md:text-sm font-bold tracking-widest uppercase mb-4">
+                                <div className="inline-block bg-transparent text-white px-5 py-2 rounded-lg text-xs md:text-sm font-bold tracking-widest uppercase mb-4 border border-white/40">
                                     {entities[currentIndex].name}
                                 </div>
 
@@ -77,7 +77,7 @@ export default function Entities() {
                                     {entities[currentIndex].description}
                                 </p>
 
-                                <button className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3.5 rounded-full text-base font-medium transition-all shadow-lg flex items-center gap-2 group/btn">
+                                <button className="btn-blue group/btn">
                                     En savoir plus
                                     <ArrowUpRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                 </button>
@@ -87,14 +87,14 @@ export default function Entities() {
                             <div className="flex items-center gap-3 md:gap-4 pb-2">
                                 <button
                                     onClick={prevSlide}
-                                    className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105 active:scale-95"
+                                    className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-2xl bg-transparent border border-white/40 text-white hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
                                     aria-label="Previous slide"
                                 >
                                     <ChevronLeft className="w-6 h-6" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
-                                    className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105 active:scale-95"
+                                    className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-2xl bg-transparent border border-white/40 text-white hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
                                     aria-label="Next slide"
                                 >
                                     <ChevronRight className="w-6 h-6" />

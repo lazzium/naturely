@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
 
             {/* Main Footer Box */}
-            <div className="w-full max-w-[96%] xl:max-w-[98%] mx-auto bg-white/95 backdrop-blur-sm rounded-[32px] md:rounded-[40px] shadow-sm p-5 md:p-6 lg:p-10 border border-white relative overflow-hidden">
+            <div className="w-full max-w-[96%] xl:max-w-[98%] mx-auto bg-white rounded-[32px] md:rounded-[40px] p-5 md:p-6 lg:p-10 border border-gray-300 relative overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
                     {/* Left Column: Newsletter & Info */}
