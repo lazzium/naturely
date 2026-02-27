@@ -80,9 +80,9 @@ export default function ServicesPage() {
                     <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto font-light leading-relaxed">
                         Pour mieux accomplir notre mission, nous nous appuyons sur trois laboratoires d'ingénierie spécifiques de pointe.
                     </p>
-                    <button className="bg-brand-blue text-white hover:bg-brand-blue/90 rounded-full px-6 sm:px-8 py-3.5 text-sm font-medium transition-all inline-flex items-center justify-center gap-2 shadow-lg group">
+                    <a href="https://wa.me/22951885761" target="_blank" rel="noopener noreferrer" className="bg-brand-blue text-white hover:bg-brand-blue/90 rounded-full px-6 sm:px-8 py-3.5 text-sm font-medium transition-all inline-flex items-center justify-center gap-2 shadow-lg group">
                         Faire une demande <ArrowRight className="w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </a>
                 </div>
 
                 {/* Laboratoires Cards */}
@@ -134,9 +134,9 @@ export default function ServicesPage() {
                                     </div>
 
                                     <div className="mt-auto pt-8">
-                                        <button className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-all ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200 shadow-none' : 'bg-white text-brand-blue hover:bg-gray-50 shadow-md'}`}>
+                                        <a href="https://wa.me/22951885761" target="_blank" rel="noopener noreferrer" className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-all ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200 shadow-none' : 'bg-white text-brand-blue hover:bg-gray-50 shadow-md'}`}>
                                             Faire une demande <ArrowRight className="w-5 h-5 flex-shrink-0" />
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             ))}
@@ -155,9 +155,9 @@ export default function ServicesPage() {
                                     </div>
 
                                     <div className="mt-auto pt-8">
-                                        <button className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-all ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200 shadow-none' : 'bg-white text-brand-blue hover:bg-gray-50 shadow-md'}`}>
+                                        <a href="https://wa.me/22951885761" target="_blank" rel="noopener noreferrer" className={`w-full py-4 px-6 rounded-2xl font-semibold inline-flex items-center justify-center gap-2 transition-all ${service.light ? 'bg-gray-100 text-gray-900 hover:bg-gray-200 shadow-none' : 'bg-white text-brand-blue hover:bg-gray-50 shadow-md'}`}>
                                             Faire une demande <ArrowRight className="w-5 h-5 flex-shrink-0" />
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             ))}

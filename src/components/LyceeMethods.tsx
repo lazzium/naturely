@@ -27,17 +27,17 @@ export default function LyceeMethods() {
                     <div className="flex-grow max-w-3xl">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.2]">
                             Une pédagogie active privilégiant l'immersion en{" "}
-                            <span className="underline decoration-white/60 underline-offset-8 decoration-2 italic">mode projet</span>{" "}
+                            <span className="underline decoration-white/60 underline-offset-8 decoration-2 italic text-brand-orange">mode projet</span>{" "}
                             dès le début de la formation.
                         </h2>
                     </div>
                 </div>
 
                 {/* Stats / Key points Row */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 mt-12">
                     {/* Point 1 */}
                     <div className="md:px-8 border-l-0 md:border-l border-white/30 first:border-l-0 flex flex-col gap-4">
-                        <div className="text-4xl lg:text-5xl font-black">100%</div>
+                        <div className="text-4xl lg:text-5xl font-black text-brand-orange">100%</div>
                         <p className="text-white/80 text-sm sm:text-base font-medium max-w-[250px] leading-relaxed">
                             Pratique & Immersion. Des études de cas et simulations réelles.
                         </p>
@@ -45,7 +45,7 @@ export default function LyceeMethods() {
 
                     {/* Point 2 */}
                     <div className="md:px-8 border-l-0 md:border-l border-white/30 flex flex-col gap-4">
-                        <div className="text-4xl lg:text-5xl font-black">Expert</div>
+                        <div className="text-4xl lg:text-5xl font-black text-brand-orange">Expert</div>
                         <p className="text-white/80 text-sm sm:text-base font-medium max-w-[250px] leading-relaxed">
                             Enseignements dispensés par des professionnels du secteur.
                         </p>
@@ -53,7 +53,7 @@ export default function LyceeMethods() {
 
                     {/* Point 3 */}
                     <div className="md:px-8 border-l-0 md:border-l border-white/30 flex flex-col gap-4">
-                        <div className="text-4xl lg:text-5xl font-black">Top</div>
+                        <div className="text-4xl lg:text-5xl font-black text-brand-orange">Top</div>
                         <p className="text-white/80 text-sm sm:text-base font-medium max-w-[250px] leading-relaxed">
                             Infrastructure & plate-formes technologiques de pointe.
                         </p>

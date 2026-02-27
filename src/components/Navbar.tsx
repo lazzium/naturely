@@ -30,10 +30,10 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Accueil', href: '/' },
     { name: 'Services', href: '/services' },
-    { name: 'Collège', href: '#' },
+    { name: 'Collège', href: '/college' },
     { name: 'Lycée', href: '/lycee' },
-    { name: 'Centre', href: '#' },
-    { name: 'Stage et soutien Scolaire', href: '#' },
+    { name: 'Centre', href: '/centre' },
+    { name: 'Stage et Soutien Académique', href: '#' },
     { name: 'Sessions', href: '#' },
   ];
 
